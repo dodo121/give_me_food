@@ -1,0 +1,16 @@
+connection: &connection
+connection: &connection
+  adapter: postgresql
+  encoding: unicode
+  host:     localhost
+  pool: 5
+  username: pet
+  password: pet
+
+development:
+  <<: *connection
+  database: give_me_food_development
+
+test: &test
+  <<: *connection
+  database: give_me_food_test
