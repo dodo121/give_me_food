@@ -1,10 +1,10 @@
 %p#notice= notice
 %p
   %strong Name:
-  = @pet.name
+  = pet.name
 %p
   %strong Date of birth:
-  = @pet.date_of_birth
-= link_to 'Edit', edit_pet_path(@pet)
+  = pet.date_of_birth
+= link_to 'Edit', edit_pet_path(pet)
 |
 \#{link_to 'Back', pets_path}

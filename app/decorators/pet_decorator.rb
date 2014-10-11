@@ -1,5 +1,5 @@
 class PetDecorator < Draper::Decorator
-
+  delegate_all
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
@@ -9,8 +9,5 @@ class PetDecorator < Draper::Decorator
   #     end
   #   end
 
-  def life_time
-    life_time = Date.today - date_of_birth
-    lift_time = to_i
-  end
+  
 end

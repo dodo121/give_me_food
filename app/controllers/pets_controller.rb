@@ -1,8 +1,9 @@
 class PetsController < ApplicationController
-  expose_decorated :pet
+  
+  expose_decorated(:pet, attributes: :pet_params)
+  expose_decorated(:pets)
+  before_action :authenticate_user!
 
-  # GET /pets
-  # GET /pets.json
   def index
   end
 
@@ -23,7 +24,7 @@ class PetsController < ApplicationController
   # POST /pets.json
   def create
     pet = Pet.new(pet_params)
-
+    pet.user = current_user
     respond_to do |format|
       if pet.save
         format.html { redirect_to pet, notice: 'Pet was successfully created.' }
