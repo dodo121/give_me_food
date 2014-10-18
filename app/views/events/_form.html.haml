@@ -1,0 +1,6 @@
+= simple_form_for event do |f|
+  = f.input :title
+  = f.input :description
+  = f.input :date, as: :date
+  = f.input :pet_id, collection: current_user.pets, include_blank: false
+  = f.button :submit
