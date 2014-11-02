@@ -4,6 +4,8 @@ class Pet < ActiveRecord::Base
   belongs_to :user
   has_many :events
 
+  validates_presence_of :name
+
   def calculate_life_time
     self.life_time = (Date.today - self.date_of_birth).to_i
   end
