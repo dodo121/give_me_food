@@ -7,6 +7,6 @@ class Pet < ActiveRecord::Base
   validates_presence_of :name
 
   def calculate_life_time
-    self.life_time = (Date.today - self.date_of_birth).to_i
+   self.life_time = (Date.today - self.date_of_birth).to_i
   end
 end

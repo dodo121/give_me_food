@@ -19,8 +19,9 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.day, at '12:01 am' do
-  runner Pets.each do |pet|
-    pet.life_time = (Date.today - date_of_birth).to_i
-  end
+every 1.day, :at => '12:00 am' do
+  runner "Pet.all.each do
+          |p| p.calculate_life_time
+          p.save!
+        end", :environment => "development"
 end
