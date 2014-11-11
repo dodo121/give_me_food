@@ -1,11 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyString
-  event_date: 2014-10-12
-
-two:
-  title: MyString
-  description: MyString
-  event_date: 2014-10-12
+event_good:
+  title: Vet visit
+  description: Lorem ipsum sit dolot
+  date: 2014-10-12

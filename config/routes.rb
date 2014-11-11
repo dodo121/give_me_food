@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resource :calendar, only: [:show], controller: :calendar
   devise_for :users
   resources :pets
-  root 'pets#index'
+  resources :home, only: [:show], controller: :home
+  root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class PetTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should not create pet without name" do
+    pet = Pet.new
+    assert_not pet.save
+  end
 end
