@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+(1..10).each do |n| 
+  Pet.create(name: "Pixel" + "#{n}", date_of_birth: '2014-10-10')
+end
