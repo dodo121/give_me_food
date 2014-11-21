@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141018145748) do
     t.string   "title"
     t.string   "description"
     t.date     "date"
+    t.time     "time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"

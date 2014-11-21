@@ -1,6 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-Pet:
- name: Pixel
- date_of_birth: 2014-10-05
- user: user

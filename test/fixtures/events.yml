@@ -1,6 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-event_good:
-  title: Vet visit
-  description: Lorem ipsum sit dolot
-  date: 2014-10-12

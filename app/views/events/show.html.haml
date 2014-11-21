@@ -16,7 +16,12 @@
 %p
   %strong
     Event date:
-  = event.date
+  = event.datetime
+
+%p
+  %strong
+    Event time:
+  = event.time
 
 
 = link_to 'Edit', edit_event_path(event)
