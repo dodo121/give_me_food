@@ -1,0 +1,15 @@
+.event { 
+	position: relative;
+	list-style:none;
+}
+.event .remove-event {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.event-description {
+	display:none;
+	z-index:1;
+	background-color:#efefef;
+	border-radius:10px solid #efefef;
+}

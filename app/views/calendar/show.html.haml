@@ -1,18 +1,21 @@
 %div.row
-  %div.col-md-12 text-center
-  %div.well.controls
-    = link_to calendar_path(date: @date - 1.month), class: "btn btn-default" do
-      %i.glyphicon.glyphicon-backward
-    = "#{@date.strftime("%B")} #{@date.year}"
-    = link_to calendar_path(date: @date + 1.month), class: "btn btn-default" do
-      %i.glyphicon.glyphicon-forward
+	%div.col-md-12 text-center
+	%div.well.controls
+		= link_to calendar_path(date: @date - 1.month), class: "btn btn-default" do
+			%i.glyphicon.glyphicon-backward
+		= "#{@date.strftime("%B")} #{@date.year}"
+		= link_to calendar_path(date: @date + 1.month), class: "btn btn-default" do
+			%i.glyphicon.glyphicon-forward
 %div.row
-  %div.col-md-12
-    = calendar @date do |date|
-      = date.day
-        - if @events_by_date[date]
-          %ul
-            - @events_by_date[date].each do |event|
-            %li= link_to event.title, event 
-            %li= 'Pet name: ' + "#{event.pet.name}"
-            %li= link_to 'Remove this event', event_path(event), method: :delete
+	%div.col-md-12
+		= calendar @date do |date|
+			= date.day
+				- if @events_by_date[date]
+					%ul.event
+						- @events_by_date[date].each do |event|
+						%li.event-title= link_to event.title, event 
+						%ul.event-description
+							%li= 'Pet name: ' + "#{event.pet.name}"
+							%li= event.time
+							%li= event.description
+						%span.remove-event= link_to image_tag('X.png'), event_path(event), method: :delete
