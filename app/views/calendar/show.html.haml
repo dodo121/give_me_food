@@ -14,5 +14,5 @@
           %ul
             - @events_by_date[date].each do |event|
             %li= link_to event.title, event 
-            %li Pet name: #{event.pet.name}
+            %li= 'Pet name: ' + "#{event.pet.name}"
             %li= link_to 'Remove this event', event_path(event), method: :delete
