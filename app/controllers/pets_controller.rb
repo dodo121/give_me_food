@@ -2,7 +2,8 @@ class PetsController < ApplicationController
   
   expose_decorated(:pet, attributes: :pet_params)
   expose_decorated(:pets)
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
+  before_action :check_owner, only: [:edit, :destroy]
 
   def index
   end
@@ -66,5 +67,11 @@ class PetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pet_params
       params.require(:pet).permit(:name, :date_of_birth)
+    end
+    
+    def check_owner
+      if pet.user != current_user
+        redirect_to root_path, notice: 'This is not your pet!'
+      end
     end
 end

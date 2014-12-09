@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :pet do
     name 'Rex'
-    association :user
+    date_of_birth '2014-10-10'
+    user
   end
 end

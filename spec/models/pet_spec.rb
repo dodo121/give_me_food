@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 describe Pet do
+  it "has valid factory" do
+    expect( create(:pet) ).to be_valid
+  end
+  it "has user as parent" do
+    @pet = create(:pet)
+    @user = create(:user)
+    expect(@pet.user.email).to eq @user.email
+  end
   it "is invalid without name" do
     expect( build(:pet, name:nil) ).not_to be_valid
   end
