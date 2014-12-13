@@ -3,6 +3,8 @@
 = link_to 'calendar', calendar_path
 = link_to 'new event', new_event_path
 = link_to 'my pets', pets_path
+
 - if user_signed_in?
-	= link_to 'sign out', destroy_user_session_path, method: :delete
-	You are signed as: "#{current_user.email}"
+  = link_to 'places', places_path
+  = link_to 'sign out', destroy_user_session_path, method: :delete
+  You are signed as: "#{current_user.email}"

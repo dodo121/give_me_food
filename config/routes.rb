@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  resources :places do
+    member do
+      post 'add_to_visited'
+    end
+  end
+
   resources :events
 
   resource :calendar, only: [:show], controller: :calendar
   devise_for :users
   resources :pets
   resources :home, only: [:show], controller: :home
+  
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -16,3 +16,6 @@ end
 
 Event.create(title: 'Vet visit', description: 'Lorem ipsum sit dolot ament', date: '2014-12-30', time: '12:00', user: User.first, pet: Pet.first)
 
+(1..10).each do |n|
+  Place.create(street: 'Steet' + "#{n}", city: 'City' + "#{n}", country: 'Country' + "#{n}")
+end

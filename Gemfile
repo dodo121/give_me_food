@@ -7,6 +7,7 @@ gem 'rails', '4.1.7'
 gem 'pg'
 gem 'devise'
 gem 'haml'
+gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'simple_form'
 # Use SCSS for stylesheets

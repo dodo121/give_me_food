@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%p
+  %b Street:
+  = @place.street
+%p
+  %b City:
+  = @place.city
+%p
+  %b Country:
+  = @place.country
+
+= link_to 'Edit', edit_place_path(@place)
+\|
+= link_to 'Back', places_path
+
+= link_to 'Add to visited', add_to_visited_place_path, method: :post
