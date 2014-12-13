@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'decent_exposure'
 gem 'decent_decoration'
+
 gem 'draper'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
