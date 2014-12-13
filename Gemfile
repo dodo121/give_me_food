@@ -7,6 +7,7 @@ gem 'rails', '4.1.7'
 gem 'pg'
 gem 'devise'
 gem 'haml'
+gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'simple_form'
 # Use SCSS for stylesheets
@@ -19,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 gem 'decent_exposure'
 gem 'decent_decoration'
+
 gem 'draper'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
