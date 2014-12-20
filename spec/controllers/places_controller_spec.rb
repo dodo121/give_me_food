@@ -20,6 +20,11 @@ require 'rails_helper'
 
 RSpec.describe PlacesController, :type => :controller do
 
+  before do
+    user = create(:user)
+    place = Place.create! valid_attributes
+    sign_in user
+  end
   # This should return the minimal set of attributes required to create a valid
   # Place. As you add validations to Place, be sure to
   # adjust the attributes here as well.
@@ -38,7 +43,6 @@ RSpec.describe PlacesController, :type => :controller do
 
   describe "GET index" do
     it "assigns all places as @places" do
-      place = Place.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:places)).to eq([place])
     end
@@ -46,7 +50,6 @@ RSpec.describe PlacesController, :type => :controller do
 
   describe "GET show" do
     it "assigns the requested place as @place" do
-      place = Place.create! valid_attributes
       get :show, {:id => place.to_param}, valid_session
       expect(assigns(:place)).to eq(place)
     end
@@ -61,7 +64,6 @@ RSpec.describe PlacesController, :type => :controller do
 
   describe "GET edit" do
     it "assigns the requested place as @place" do
-      place = Place.create! valid_attributes
       get :edit, {:id => place.to_param}, valid_session
       expect(assigns(:place)).to eq(place)
     end
@@ -107,20 +109,17 @@ RSpec.describe PlacesController, :type => :controller do
       }
 
       it "updates the requested place" do
-        place = Place.create! valid_attributes
         put :update, {:id => place.to_param, :place => new_attributes}, valid_session
         place.reload
         skip("Add assertions for updated state")
       end
 
       it "assigns the requested place as @place" do
-        place = Place.create! valid_attributes
         put :update, {:id => place.to_param, :place => valid_attributes}, valid_session
         expect(assigns(:place)).to eq(place)
       end
 
       it "redirects to the place" do
-        place = Place.create! valid_attributes
         put :update, {:id => place.to_param, :place => valid_attributes}, valid_session
         expect(response).to redirect_to(place)
       end
@@ -128,13 +127,11 @@ RSpec.describe PlacesController, :type => :controller do
 
     describe "with invalid params" do
       it "assigns the place as @place" do
-        place = Place.create! valid_attributes
         put :update, {:id => place.to_param, :place => invalid_attributes}, valid_session
         expect(assigns(:place)).to eq(place)
       end
 
       it "re-renders the 'edit' template" do
-        place = Place.create! valid_attributes
         put :update, {:id => place.to_param, :place => invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
@@ -143,16 +140,23 @@ RSpec.describe PlacesController, :type => :controller do
 
   describe "DELETE destroy" do
     it "destroys the requested place" do
-      place = Place.create! valid_attributes
       expect {
         delete :destroy, {:id => place.to_param}, valid_session
       }.to change(Place, :count).by(-1)
     end
 
     it "redirects to the places list" do
-      place = Place.create! valid_attributes
       delete :destroy, {:id => place.to_param}, valid_session
       expect(response).to redirect_to(places_url)
+    end
+  end
+  
+  describe 'POST #add_to_visited' do
+    
+    it 'changes Place users count by 1' do
+      expect{
+        post :add_to_visited, id: place
+      }.to change(place.users, :count).by(1)
     end
   end
 

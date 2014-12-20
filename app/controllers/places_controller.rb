@@ -1,5 +1,7 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index]
+  
   expose(:users)
   expose(:user)
   expose_decorated(:places)
@@ -42,6 +44,7 @@ class PlacesController < ApplicationController
   def add_to_visited
     current_user.places << place
     redirect_to place_path
+    
   end
 
   private

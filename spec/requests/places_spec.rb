@@ -2,28 +2,30 @@ require 'rails_helper'
 
 RSpec.describe "Places", :type => :request do
   
-  describe "User" do
+  context "Signed in User" do
     
     before do
-      @user = create(:user)
+      user = create(:user) 
       @place = create(:place)
+      sign_in_action user
     end
     
-    it "adds place to visited" do
-      visit root_path
-      click_link 'sign in'
-      fill_in 'Email', with: @user.email
-      fill_in 'Password', with: @user.password
-      click_button 'Log in'
+    describe "can" do
+      it "add place to visited" do
+        add_place_to_visited @place
+      end
       
-      visit places_path
-      click_link 'Show'
-      expect(current_path).to eq place_path(@place) 
-      expect {
-        click_link 'Add to visited', @place
-      }.to change(@place.users, :count).by(1)
-      
-      expect(current_path).to eq place_path(@place)
-    end
+      it "can see place marked as visited" do
+        add_place_to_visited @place
+        visit places_path
+        expect(page).to have_content("Visited")
+      end
+    
+      it "can't mark place as visited twice" do
+        add_place_to_visited @place
+        expect(page).to have_content("You can't mark place as visited twice!")
+      end
+    
+    end 
   end
 end
