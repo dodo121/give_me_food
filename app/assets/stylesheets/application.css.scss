@@ -1,4 +1,57 @@
+@import "bootstrap-sprockets";
 @import "bootstrap";
+
+@mixin header-button($color) {
+  background: $color;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+}
+
+.navbar-default {
+  
+  ul {
+    display:inline-block;
+    list-style:none;
+    margin: 0;
+    
+    li {
+      float: left;
+      margin: 15px 5px;
+        
+      a {
+        color: #fff;
+        text-decoration: none;
+        line-height:25px;
+        padding: 0 10px;
+      }
+    }
+    li:first-child {
+      color: #F8F8F8;
+      @include header-button(#ffe908)
+    }
+    li:nth-child(2) {
+      @include header-button(#67BCDB);
+    }
+    li:nth-child(3) {
+      @include header-button(#CBE32D);
+    }
+    li:nth-child(4) {
+      @include header-button(#E44424);
+    }
+    li:nth-child(5) {
+      @include header-button(#FF9008);
+    }
+    li:nth-child(6) {
+      float:right;
+      @include header-button(#a8cd1b);
+    }
+    
+    li:hover {
+      opacity: 0.7;
+    }
+  }
+}
 
 td.today {
   background-color: #c4c4c4

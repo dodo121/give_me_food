@@ -8,7 +8,7 @@ gem 'pg'
 gem 'devise'
 gem 'haml'
 gem 'haml-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.3.1'
 gem 'simple_form'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
