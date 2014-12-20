@@ -2,15 +2,15 @@
 
 %p
   %b Street:
-  = @place.street
+  = place.street
 %p
   %b City:
-  = @place.city
+  = place.city
 %p
   %b Country:
-  = @place.country
+  = place.country
 
-= link_to 'Edit', edit_place_path(@place)
+= link_to 'Edit', edit_place_path(place)
 \|
 = link_to 'Back', places_path
 

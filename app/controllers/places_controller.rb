@@ -7,36 +7,36 @@ class PlacesController < ApplicationController
   respond_to :html
 
   def index
-    @places = Place.all
-    respond_with(@places)
+    places = Place.all
+    respond_with(places)
   end
 
   def show
-    respond_with(@place)
+    respond_with(place)
   end
 
   def new
-    @place = Place.new
-    respond_with(@place)
+    place = Place.new
+    respond_with(place)
   end
 
   def edit
   end
 
   def create
-    @place = Place.new(place_params)
-    @place.save
-    respond_with(@place)
+    place = Place.new(place_params)
+    place.save
+    respond_with(place)
   end
 
   def update
-    @place.update(place_params)
-    respond_with(@place)
+    place.update(place_params)
+    respond_with(place)
   end
 
   def destroy
-    @place.destroy
-    respond_with(@place)
+    place.destroy
+    respond_with(place)
   end
   
   def add_to_visited
@@ -46,7 +46,7 @@ class PlacesController < ApplicationController
 
   private
     def set_place
-      @place = Place.find(params[:id])
+      place = Place.find(params[:id])
     end
 
     def place_params

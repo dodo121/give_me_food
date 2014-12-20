@@ -1,9 +1,9 @@
-= form_for @place do |f|
-  - if @place.errors.any?
+= form_for place do |f|
+  - if place.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@place.errors.count, "error")} prohibited this place from being saved:"
+      %h2= "#{pluralize(place.errors.count, "error")} prohibited this place from being saved:"
       %ul
-        - @place.errors.full_messages.each do |msg|
+        - place.errors.full_messages.each do |msg|
           %li= msg
 
   .field
