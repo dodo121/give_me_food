@@ -42,9 +42,14 @@ class PlacesController < ApplicationController
   end
   
   def add_to_visited
-    current_user.places << place
-    redirect_to place_path
-    
+    begin
+      current_user.places << place
+      notice = 'Place added to visited'
+    rescue ActiveRecord::RecordInvalid
+      notice = "You can't mark place as visited twice"
+    ensure
+      redirect_to place_path, notice: notice 
+    end
   end
 
   private

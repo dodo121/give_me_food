@@ -11,21 +11,27 @@ RSpec.describe "Places", :type => :request do
     end
     
     describe "can" do
-      it "add place to visited" do
-        add_place_to_visited @place
+      it "add place to visited and increment @place users by 1" do
+        expect {
+          add_place_to_visited @place
+        }.to change(@place.users, :count).by(1)
       end
-      
-      it "can see place marked as visited" do
+  
+      it "see place marked as visited" do
         add_place_to_visited @place
         visit places_path
         expect(page).to have_content("Visited")
       end
+    end
     
-      it "can't mark place as visited twice" do
+    describe "can't" do
+      it "mark place as visited twice" do
         add_place_to_visited @place
-        expect(page).to have_content("You can't mark place as visited twice!")
-      end
-    
+        expect {
+          add_place_to_visited @place
+        }.to change(@place.users, :count).by(0)
+        expect(page).to have_content("You can't mark place as visited twice")
+      end    
     end 
   end
 end

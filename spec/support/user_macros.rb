@@ -12,9 +12,7 @@ module UserMacros
     visit places_path
     click_link 'Show'
     expect(current_path).to eq place_path(place) 
-    expect {
-      click_link 'Add to visited', place
-    }.to change(place.users, :count).by(1)
+    click_link 'Add to visited', place
     expect(current_path).to eq place_path(place)
   end
 end
