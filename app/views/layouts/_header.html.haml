@@ -1,10 +1,14 @@
-= link_to 'sign in', new_user_session_path
-= link_to 'sign up', new_user_registration_path
-= link_to 'calendar', calendar_path
-= link_to 'new event', new_event_path
-= link_to 'my pets', pets_path
-
-- if user_signed_in?
-  = link_to 'places', places_path
-  = link_to 'sign out', destroy_user_session_path, method: :delete
-  You are signed as: "#{current_user.email}"
+.navbar.navbar-default
+  %ul
+    - if user_signed_in?
+      %li.navbar-btn= link_to 'calendar', calendar_path
+      %li.navbar-btn= link_to 'new event', new_event_path
+      %li.navbar-btn= link_to 'my pets', pets_path
+      %li.navbar-btn= link_to 'places', places_path
+      %li.navbar-btn= link_to "Hello, #{current_user.email}", edit_user_registration_path  
+      %li.navbar-btn= link_to 'sign out', destroy_user_session_path, method: :delete 
+      
+    - else
+      %li.navbar-btn= link_to 'sign in', new_user_session_path
+      %li.navbar-btn= link_to 'sign up', new_user_registration_path
+  

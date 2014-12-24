@@ -1,3 +1,4 @@
+=console
 %h1 Listing events
 %table
   %thead
@@ -11,8 +12,8 @@
       %tr
         %td= event.title
         %td= event.description
-        %td= event.datetime
-				%td= event.time
+        %td= event.date
+        %td= event.time.strftime("%H:%m")
         %td= link_to 'Show', event
         %td= link_to 'Edit', edit_event_path(event)
         %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }

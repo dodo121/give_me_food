@@ -25,3 +25,7 @@ every 1.day, :at => '12:00 am' do
           p.save!
         end", :environment => "development"
 end
+
+every 1.minute do
+  runner "UserMailer.newsletter.deliver"
+end 

@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141213104744) do
+ActiveRecord::Schema.define(version: 20141223071623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
     t.date     "date"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20141213104744) do
     t.integer  "pet_id"
   end
 
-  create_table "pets", force: true do |t|
+  create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.date     "date_of_birth"
     t.datetime "created_at"
@@ -36,7 +36,14 @@ ActiveRecord::Schema.define(version: 20141213104744) do
     t.integer  "life_time"
   end
 
-  create_table "places", force: true do |t|
+  create_table "place_users", force: :cascade do |t|
+    t.integer  "place_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "places", force: :cascade do |t|
     t.string   "street"
     t.string   "city"
     t.string   "country"
@@ -44,15 +51,7 @@ ActiveRecord::Schema.define(version: 20141213104744) do
     t.datetime "updated_at"
   end
 
-  create_table "places_users", id: false, force: true do |t|
-    t.integer "user_id",  null: false
-    t.integer "place_id", null: false
-  end
-
-  add_index "places_users", ["place_id"], name: "index_places_users_on_place_id", using: :btree
-  add_index "places_users", ["user_id"], name: "index_places_users_on_user_id", using: :btree
-
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

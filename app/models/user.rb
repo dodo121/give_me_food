@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   
   has_many :pets
   has_many :events
-  has_and_belongs_to_many :places, through: :places_users
+  has_many :place_users
+  has_many :places, through: :place_users
   #validates_presence_of :
 end

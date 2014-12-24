@@ -25,7 +25,7 @@ describe PetsController, :type => :controller do
       end
     end
     
-    context "doesn't give fake pet owner persmissions" do
+    context "doesn't give fake pet owner permissions" do
       before(:each) do
         @pet = create(:pet)
         @user2 = create(:user)

@@ -1,5 +1,6 @@
 class Place < ActiveRecord::Base
-  has_and_belongs_to_many :users, through: :places_users
+  has_many :place_users
+  has_many :users, through: :place_users
   
   def visited(user)
     if self.users.find_by id: user
