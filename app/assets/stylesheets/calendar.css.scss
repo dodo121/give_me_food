@@ -1,15 +1,28 @@
+td.today {
+  background-color: #c4c4c4
+}
 .event { 
 	position: relative;
-	list-style:none;
+	list-style: none;
+  
+  .remove-event {
+    position: absolute;
+    left: 20px;
+    top: 0;
+  }
+  
+  .event-description {
+	  display: none;
+	  z-index: 1;
+	  background-color: #efefef;
+	  border-radius: 10px;
+    border: 1px solid #efefef;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+  
 }
-.event .remove-event {
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-.event-description {
-	display:none;
-	z-index:1;
-	background-color:#efefef;
-	border-radius:10px solid #efefef;
+.removed {
+  text-decoration: line-through;
 }
