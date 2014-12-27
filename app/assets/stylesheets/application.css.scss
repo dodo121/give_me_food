@@ -1,5 +1,13 @@
+/* ...
+*= require_self
+*= require_tree .
+*/
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+a:hover, a:focus {
+   color: none !important;
+}
 
 @mixin header-button($color) {
   background: $color;
@@ -53,6 +61,6 @@
   }
 }
 
-td.today {
-  background-color: #c4c4c4
+a {
+    color: inherit;
 }

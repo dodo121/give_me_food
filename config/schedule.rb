@@ -20,12 +20,12 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, :at => '12:00 am' do
-  runner "Pet.all.each do
-          |p| p.calculate_life_time
-          p.save!
-        end", :environment => "development"
+  runner "Pet.find_each do |p|
+            p.calculate_life_time
+            p.save!
+          end", :environment => "development"
 end
 
-every 1.minute do
-  runner "UserMailer.newsletter.deliver"
-end 
+# every 1.minute do
+#  runner "UserMailer.newsletter.deliver"
+# end 
