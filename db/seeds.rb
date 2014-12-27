@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 (1..10).each do |n| 
-  User.create(email: 'johndoe' + "#{n}" + '@foo.com', password: 'pass1234')
+  User.create(username: 'johndoe' + "#{n}", email: 'johndoe' + "#{n}" + '@foo.com', password: 'pass1234')
 end
 
 (1..10).each do |n| 
