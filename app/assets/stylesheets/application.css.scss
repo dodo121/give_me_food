@@ -5,8 +5,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-a:hover, a:focus {
-   color: none !important;
+a:hover {
+  background-color: transparent;
 }
 
 @mixin header-button($color) {
@@ -31,36 +31,31 @@ a:hover, a:focus {
         color: #fff;
         text-decoration: none;
         line-height:25px;
-        padding: 0 10px;
+        padding: 5px 10px;
       }
     }
-    li:first-child {
+    li:first-child a {
       color: #F8F8F8;
       @include header-button(#ffe908)
     }
-    li:nth-child(2) {
+    li:nth-child(2) a {
       @include header-button(#67BCDB);
     }
-    li:nth-child(3) {
+    li:nth-child(3) a {
       @include header-button(#CBE32D);
     }
-    li:nth-child(4) {
+    li:nth-child(4) a {
       @include header-button(#E44424);
     }
-    li:nth-child(5) {
+    li:nth-child(5) a {
       @include header-button(#FF9008);
     }
-    li:nth-child(6) {
-      float:right;
+    li:nth-child(6) a {
       @include header-button(#a8cd1b);
     }
     
-    li:hover {
-      opacity: 0.7;
+    a:hover {
+      opacity: 0.6;
     }
   }
-}
-
-a {
-    color: inherit;
 }
