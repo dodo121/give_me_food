@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   
   validates :username, uniqueness: true
   
-  has_many :pets
-  has_many :events
-  has_many :place_users
+  has_many :pets, dependent: :destroy
+  has_many :events, dependent: :destroy
+  has_many :place_users, dependent: :destroy 
   has_many :places, through: :place_users
   
   # Include default devise modules. Others available are:
