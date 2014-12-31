@@ -3,11 +3,11 @@ class Place < ActiveRecord::Base
   has_many :place_users
   has_many :users, through: :place_users
   
-  def visited(user)
+  def visited? (user)
     if self.users.find_by id: user
-      return 'Visited'
+      return true
     else
-      return 'Not visited'
+      return false
     end
   end
 end

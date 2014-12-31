@@ -20,7 +20,7 @@
         %td= link_to 'Show', place
         %td= link_to 'Edit', edit_place_path(place)
         %td= link_to 'Destroy', place, :method => :delete, :data => { :confirm => 'Are you sure?' }
-        %td= place.visited(current_user.id)
+        %td= place.visited_state(current_user.id)
 %br
 
 = link_to 'New Place', new_place_path

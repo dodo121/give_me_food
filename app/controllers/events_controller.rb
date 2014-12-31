@@ -3,26 +3,7 @@ class EventsController < ApplicationController
   expose(:events)
   expose(:pet)
   before_action :authenticate_user!
-  # GET /events
-  # GET /events.json
-  def index
-  end
-
-  # GET /events/1
-  # GET /events/1.json
-  def show
-  end
-
-  # GET /events/new
-  def new
-  end
-
-  # GET /events/1/edit
-  def edit
-  end
-
-  # POST /events
-  # POST /events.json
+  
   def create
     event = Event.new(event_params)
     event.user = current_user
@@ -37,8 +18,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /events/1
-  # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
       if event.update(event_params)
@@ -51,8 +30,6 @@ class EventsController < ApplicationController
     end
   end
 
-  # DELETE /events/1
-  # DELETE /events/1.json
   def destroy
     event.destroy
     respond_to do |format|

@@ -10,4 +10,12 @@ class PlaceDecorator < Draper::Decorator
   #     end
   #   end
   
+  def visited_state (user)
+    if place.visited?(user)
+      "Visited"
+    else
+      "Not visited"
+    end
+  end
+  
 end

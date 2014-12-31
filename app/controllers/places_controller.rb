@@ -8,23 +8,6 @@ class PlacesController < ApplicationController
   expose_decorated(:place)
   respond_to :html
 
-  def index
-    places = Place.all
-    respond_with(places)
-  end
-
-  def show
-    respond_with(place)
-  end
-
-  def new
-    place = Place.new
-    respond_with(place)
-  end
-
-  def edit
-  end
-
   def create
     place = Place.new(place_params)
     place.save
