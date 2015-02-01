@@ -4,7 +4,7 @@ describe PetsController, :type => :controller do
   describe 'pet owner authorization' do
     
     context 'gives true pet owner permissions' do
-      before(:each) do
+      before do
         @pet = create(:pet)
         sign_in @pet.user
       end
@@ -26,10 +26,10 @@ describe PetsController, :type => :controller do
     end
     
     context "doesn't give fake pet owner permissions" do
-      before(:each) do
+      before do
         @pet = create(:pet)
-        @user2 = create(:user)
-        sign_in @user2
+        user2 = create(:user)
+        sign_in user2
       end
       
       describe 'action GET #edit' do
