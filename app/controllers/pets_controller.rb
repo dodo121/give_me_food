@@ -1,5 +1,4 @@
 class PetsController < ApplicationController
-  
   expose_decorated(:pet, attributes: :pet_params)
   expose_decorated(:pets)
   #before_action :authenticate_user!
@@ -46,7 +45,7 @@ class PetsController < ApplicationController
     def pet_params
       params.require(:pet).permit(:name, :date_of_birth)
     end
-    
+
     def check_owner
       if pet.user != current_user
         redirect_to root_path, notice: 'This is not your pet!'
