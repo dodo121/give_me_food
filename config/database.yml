@@ -4,8 +4,8 @@ connection: &connection
   encoding: unicode
   host:     localhost
   pool: 5
-  username: pet
-  password: pet
+  username: dszromik
+  password: dszromik
 
 development:
   <<: *connection

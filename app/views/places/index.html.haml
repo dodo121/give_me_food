@@ -1,25 +1,21 @@
-%h1 Listing places
+%h1 List of nice places
 
-%table
+%table.table.table-bordered
   %thead
     %tr
       %th Street
       %th City
       %th Country
-      %th 
-      %th
-      %th
+      %th Options
       %th Visited?
-      
+
   %tbody
     - places.each do |place|
       %tr
         %td= place.street
         %td= place.city
         %td= place.country
-        %td= link_to 'Show', place
-        %td= link_to 'Edit', edit_place_path(place)
-        %td= link_to 'Destroy', place, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Show details', place, class: 'btn btn-success btn-sm'
         %td= place.visited_state(current_user.id)
 %br
 
