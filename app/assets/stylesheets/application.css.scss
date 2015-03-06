@@ -59,6 +59,9 @@ h1 {
     li:nth-child(6) a {
       @include header-button(#a8cd1b);
     }
+    li:nth-child(7) a {
+      @include header-button(#ff5555);
+    }
   }
 }
 #content {
