@@ -21,7 +21,7 @@
 %p
   %strong
     Event time:
-  = event.time.strftime("%H:%m")
+  = event.time.strftime("%H:%m") if event.time.present?
 
 
 = link_to 'Edit', edit_event_path(event)

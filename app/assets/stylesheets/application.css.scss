@@ -1,9 +1,11 @@
 /* ...
 *= require_self
 *= require_tree .
+*= require bootstrap-datetimepicker
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-datetimepicker";
 
 h1 {
   margin: 20px 0 !important;
@@ -71,6 +73,9 @@ a:hover {
 #content {
   min-height:500px;
   margin-bottom: 50px
+}
+.form-group {
+  max-width:300px;
 }
 
 #footer {

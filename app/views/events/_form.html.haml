@@ -1,7 +1,7 @@
-= simple_form_for event do |f|
+= simple_form_for(event, html: { class: 'form-horizontal' }) do |f|
   = f.input :title
   = f.input :description, as: :text
-  = f.input :date, as: :date
-  = f.input :time, as: :time
+  = f.input :date, :as => :date_picker
+  = f.input :time, :as => :time_picker
   = f.input :pet_id, collection: current_user.pets, include_blank: false
   = f.button :submit
