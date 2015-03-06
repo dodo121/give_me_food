@@ -36,7 +36,9 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 gem 'momentjs-rails', '~> 2.9', :github => 'derekprior/momentjs-rails'
 gem 'underscore-rails'
 gem 'geocoder'
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+
+gem 'stripe-rails'
+gem 'country_select'
 
 group :development do
   gem 'web-console', '~> 2.0'
