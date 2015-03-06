@@ -1,7 +1,7 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
-  
+
   expose(:users)
   expose(:user)
   expose_decorated(:places)
@@ -23,7 +23,7 @@ class PlacesController < ApplicationController
     place.destroy
     respond_with(place)
   end
-  
+
   def add_to_visited
     begin
       current_user.places << place
@@ -32,7 +32,7 @@ class PlacesController < ApplicationController
     rescue ActiveRecord::RecordInvalid
       notice = "You can't mark place as visited twice"
     ensure
-      redirect_to place_path, notice: notice 
+      redirect_to place_path, notice: notice
     end
   end
 
@@ -42,6 +42,6 @@ class PlacesController < ApplicationController
     end
 
     def place_params
-      params.require(:place).permit(:street, :city, :country)
+      params.require(:place).permit(:street, :city, :country, :description)
     end
 end

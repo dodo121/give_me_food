@@ -1,4 +1,4 @@
-.col-md-6
+.col-md-3
   %h3 Place details
   %p#notice= notice
 
@@ -11,6 +11,9 @@
   %p
     %b Country:
     = place.country
+  %p
+    %b Description:
+    = place.description
 
   = link_to 'Edit', edit_place_path(place)
   \|
@@ -18,7 +21,7 @@
 
   = link_to 'Add to visited', add_to_visited_place_path, method: :post
 
-.col-md-6
+.col-md-9
   %h3 Map:
   %div{:style => "width: 800px;"}
     #map{:style => "width: 800px; height: 400px;"}
