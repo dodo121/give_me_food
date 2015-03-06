@@ -15,14 +15,11 @@
     %b Description:
     = place.description
 
-  = link_to 'Edit', edit_place_path(place)
-  \|
-  = link_to 'Back', places_path
-
-  = link_to 'Add to visited', add_to_visited_place_path, method: :post
+  = link_to 'Add to visited', add_to_visited_place_path, method: :post, class: 'btn btn-primary btn-lg'
+  %br/
 
 .col-md-9
   %h3 Map:
-  %div{:style => "width: 800px;"}
-    #map{:style => "width: 800px; height: 400px;"}
+  %div{:style => "width: 600px;"}
+    #map{:style => "width: 600px; height: 400px;"}
     = render 'places/maps'

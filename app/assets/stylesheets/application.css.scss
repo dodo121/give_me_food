@@ -11,10 +11,6 @@ h1 {
   margin: 20px 0;
 }
 
-a:hover {
-  background-color: transparent;
-}
-
 @mixin header-button($color) {
   background: $color;
   border-radius: 10px;
@@ -28,7 +24,7 @@ a:hover {
     display:inline-block;
     list-style:none;
     margin: 0;
-    margin-left: 20px;
+    padding:0;
 
     li {
       float: left;
@@ -46,7 +42,6 @@ a:hover {
       }
     }
     li:first-child a {
-      color: #F8F8F8;
       @include header-button(#FFD700)
     }
     li:nth-child(2) a {
@@ -64,21 +59,17 @@ a:hover {
     li:nth-child(6) a {
       @include header-button(#a8cd1b);
     }
-
-    a:hover {
-      opacity: 0.8;
-    }
   }
 }
 #content {
   min-height:500px;
-  margin-bottom: 50px
 }
 .form-group {
   max-width:300px;
 }
 
 #footer {
+  margin-top: 100px;
   border-top: 1px solid #000;
   text-transform: uppercase;
   text-align:center;
