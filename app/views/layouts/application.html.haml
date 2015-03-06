@@ -10,4 +10,6 @@
   %body
     = render 'layouts/header'
     .container
-      = yield
+      %div#content
+        = yield
+      = render 'layouts/footer'
