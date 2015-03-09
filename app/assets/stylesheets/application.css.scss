@@ -106,3 +106,21 @@ h1 {
     color: #468847;
     text-align: left;
  }
+
+.premium-btn {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #FFA500;
+  padding: 15px;
+  display: block;
+  width: 220px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+.premium-btn:hover {
+  background-color: #FF8C00;
+  cursor:pointer;
+  color: #fff;
+  text-decoration:none;
+}
