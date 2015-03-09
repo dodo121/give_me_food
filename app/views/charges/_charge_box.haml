@@ -4,7 +4,7 @@
     %article
       %label.amount
         %span
-          Amount: $ #{amount}
+          $#{amount}
       = hidden_field_tag 'amount', "#{amount_in_cents}"
       = hidden_field_tag 'month_number', month_number
     %script.stripe-button{"data-amount" => "amount_in_cents", "data-description" =>  "#{description}", "data-key" => STRIPE_PUBLIC_KEY, :src => "https://checkout.stripe.com/checkout.js"}
