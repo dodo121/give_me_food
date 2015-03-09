@@ -4,7 +4,7 @@ class ChargesController < ApplicationController
 
   def create
     customer = Stripe::Customer.create(
-      email: current_user.email,
+      email: params[:email],
       card: params[:stripeToken]
     )
 
@@ -14,6 +14,7 @@ class ChargesController < ApplicationController
       description: 'Premium Account',
       currency: 'usd'
     )
+    current_user.make_premium(params[:month_number]) if charge[:paid]
 
   rescue Stripe::CardError => e
     flash[:error] = e.message

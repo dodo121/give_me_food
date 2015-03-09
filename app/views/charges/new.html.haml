@@ -1,0 +1,5 @@
+.row
+  = render partial: 'charge_box', locals: { month_number: 1, amount: 4.99, amount_in_cents: 499, description: '1 month subscription' }
+  = render partial: 'charge_box', locals: { month_number: 3, amount: 9.99, amount_in_cents: 999, description: "3 month's subscription" }
+  = render partial: 'charge_box', locals: { month_number: 6, amount: 12.99, amount_in_cents: 1299, description: "6 month's subscription" }
+  = render partial: 'charge_box', locals: { month_number: 12, amount: 18.99, amount_in_cents: 1899, description: "12 month's subscription" }
