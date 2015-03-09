@@ -16,3 +16,6 @@
 /tmp
 
 /config/secrets.yml
+
+#Ignore Stripe keys
+/config/initializers/stripe.rb
