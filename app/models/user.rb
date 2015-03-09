@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
     self.save
   end
 
+  def has_premium_account?
+    premium == true && premium_expiry_date > Time.now
+  end
+
   private
 
   def self.find_for_database_authentication(warden_conditions)

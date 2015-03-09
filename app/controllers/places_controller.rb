@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index]
+  before_action :premium_user?, only: [:create]
 
   expose(:users)
   expose(:user)
@@ -37,8 +37,12 @@ class PlacesController < ApplicationController
   end
 
   private
-    def set_place
-      place = Place.find(params[:id])
+
+    def premium_user?
+      unless current_user.has_premium_account?
+        redirect_to new_charge_path
+        flash[:error] = "You aren't a premium user!"
+      end
     end
 
     def place_params

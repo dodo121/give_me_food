@@ -3,5 +3,6 @@
 
 %h4
   New things to try:
-  %ul
-    %li
+  - if current_user.has_premium_account?
+    %ul
+      %li=link_to 'Add new place', new_place_path
