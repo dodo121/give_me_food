@@ -363,6 +363,7 @@ DEPENDENCIES
   mailcatcher
   momentjs-rails (~> 2.9)!
   pg
+  pry
   rails (= 4.2)
   rspec-rails
   sass-rails (~> 4.0.3)

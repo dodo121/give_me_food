@@ -40,6 +40,8 @@ gem 'geocoder'
 gem 'stripe-rails'
 gem 'country_select'
 
+gem 'pry'
+
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'better_errors'
