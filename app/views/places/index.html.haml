@@ -19,4 +19,4 @@
         %td= place.visited_state(current_user.id)
 %br
 - if current_user.has_premium_account?
-  = link_to 'Add new place', new_place_path
+  = link_to 'Add new place', new_place_path, class: 'btn btn-success btn-sm'

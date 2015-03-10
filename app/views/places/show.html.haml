@@ -16,9 +16,9 @@
 
   = link_to 'Add to visited', add_to_visited_place_path, method: :post, class: 'btn btn-primary btn-lg'
   %br/
-
-.col-md-9
-  %h3 Map:
+.col-md-1
+.col-md-8
+  %h3 Map
   %div{:style => "width: 600px;"}
     #map{:style => "width: 600px; height: 400px;"}
     = render 'places/maps'
