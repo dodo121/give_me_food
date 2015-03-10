@@ -15,13 +15,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def make_premium(month_number)
-    self.premium = true
     self.premium_expiry_date = Time.now + month_number.to_i.months
     self.save
   end
 
   def has_premium_account?
-    premium == true && premium_expiry_date > Time.now
+    premium_expiry_date > Time.now
   end
 
   private
