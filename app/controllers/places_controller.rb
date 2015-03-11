@@ -27,7 +27,6 @@ class PlacesController < ApplicationController
   def add_to_visited
     begin
       current_user.places << place
-      UserMailer.newsletter(current_user).deliver_later
       notice = 'Place added to visited'
     rescue ActiveRecord::RecordInvalid
       notice = "You can't mark place as visited twice"
