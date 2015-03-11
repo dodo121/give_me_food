@@ -59,6 +59,8 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'timecop'
+  gem 'shoulda-matchers', require: false
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
