@@ -14,13 +14,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+# TODO make premium renew || extendable
   def make_premium(month_number)
     self.premium_expiry_date = Time.now + month_number.to_i.months
     self.save
   end
 
   def has_premium_account?
-    premium_expiry_date > Time.now
+    premium_expiry_date != nil && premium_expiry_date > Time.now
   end
 
   private
