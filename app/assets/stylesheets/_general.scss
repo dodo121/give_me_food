@@ -1,0 +1,120 @@
+h1 {
+  margin: 20px 0;
+}
+
+body {
+  font-family: Verdana;
+}
+
+@mixin header-button($color) {
+  background: $color;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.navbar {
+  background-color: #7FDBFF;
+  ul {
+    display:inline-block;
+    list-style:none;
+    margin: 0;
+    padding:0;
+
+    li {
+      float: left;
+      margin: 15px 5px;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        line-height:25px;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 12px 15px;
+        font-weight: bold;
+        font-size: 15px;
+      }
+    }
+    li:first-child a {
+      @include header-button(#FFD700)
+    }
+    li:nth-child(2) a {
+      @include header-button(#67BCDB);
+    }
+    li:nth-child(3) a {
+      @include header-button(#CBE32D);
+    }
+    li:nth-child(4) a {
+      @include header-button(#E44424);
+    }
+    li:nth-child(5) a {
+      @include header-button(#FF9008);
+    }
+    li:nth-child(6) a {
+      @include header-button(#a8cd1b);
+    }
+    li:nth-child(7) a {
+      @include header-button(#ff5555);
+    }
+  }
+}
+#content {
+  min-height:500px;
+}
+.form-group {
+  max-width:300px;
+}
+
+/*flash*/
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
+
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+}
+
+.premium-btn {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #FFA500;
+  padding: 15px;
+  display: block;
+  width: 220px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+.premium-btn:hover {
+  background-color: #FF8C00;
+  cursor:pointer;
+  color: #fff;
+  text-decoration:none;
+}
+.checkbox {
+  padding-left: 0 !important;
+}
+form abbr {
+  display: none;
+}

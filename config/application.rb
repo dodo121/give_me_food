@@ -20,6 +20,9 @@ module GiveMeFood
       g.fixture_replacement :facotry_girl, dir: "spec/factories"
     end
 
+    config.stripe.publishable_key = Rails.application.secrets.stripe_publishable_key
+    config.stripe.secret_key = Rails.application.secrets.stripe_secret_key
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

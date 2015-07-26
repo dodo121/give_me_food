@@ -14,4 +14,9 @@ end
   Pet.create(name: 'Pet' + "#{n}", date_of_birth: '2014-10-10', user_id: 1)
 end
 
-Event.create(title: 'Vet visit', description: 'Lorem ipsum sit dolot ament', date: '2014-12-30', time: '12:00', user_id: 1, pet_id: 1)
+Event.create(title: 'Vet visit',
+             description: 'Lorem ipsum sit dolot ament',
+             date: '2014-12-30',
+             time: '12:00',
+             user_id: 1,
+             pet_id: 1)
