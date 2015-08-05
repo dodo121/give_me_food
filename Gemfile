@@ -21,6 +21,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'decent_exposure'
 gem 'decent_decoration'
 
+gem 'actioncable', github: 'rails/actioncable'
+
 gem 'draper'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
