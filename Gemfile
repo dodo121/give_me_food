@@ -22,6 +22,7 @@ gem 'decent_exposure'
 gem 'decent_decoration'
 
 gem 'actioncable', github: 'rails/actioncable'
+gem 'puma'
 
 gem 'draper'
 # Use jquery as the JavaScript library
